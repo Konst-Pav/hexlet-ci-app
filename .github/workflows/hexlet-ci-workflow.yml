@@ -5,21 +5,16 @@ on: push
 jobs:
   # build – произвольно выбранное имя задания
   # их может быть больше одного
-  security:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.484d7353-53e8-40e9-bb83-72a065569b58 }}
   first-job-build:
     # операционная система для работы воркфлоу
     runs-on: ubuntu-latest
     steps: # список шагов, которые надо выполнить
       # экшен, выполняет какую-то задачу
       # checkout – клонирует репозиторий
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: snyk/actions/node@v0.3.0
+        env:
+          SNYK_TOKEN: ${{ secrets.484d7353-53e8-40e9-bb83-72a065569b58 }}
       # run – произвольная bash-команда
       # ls -la выведет содержимое текущего репозитория
       - run: make setup
