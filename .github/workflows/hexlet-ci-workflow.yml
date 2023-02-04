@@ -1,5 +1,6 @@
 # file: .github/workflows/hello-world.yml
 name: workflow-hexlet-ci
+SNYK_TOKEN: 484d7353-53e8-40e9-bb83-72a065569b58
 on: push
 jobs:
   first-job-build:
