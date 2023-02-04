@@ -11,4 +11,4 @@ jobs:
       - run: make lint
       - uses: snyk/actions/node@master
         env:
-          SNYK_TOKEN: ${{ secrets.484d7353-53e8-40e9-bb83-72a065569b58 }}
+          SNYK_TOKEN: ${{ secrets.'484d7353-53e8-40e9-bb83-72a065569b58' }}
